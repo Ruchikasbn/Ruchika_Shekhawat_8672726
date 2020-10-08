@@ -29,7 +29,7 @@ namespace NUnitTestProjectTriangle
             {
                 Assert.IsTrue(flag);
             }
-               
+
         }
         [Test]
         public void Test2_NotEquilateral()
@@ -120,10 +120,10 @@ namespace NUnitTestProjectTriangle
         public void Test7_negative_input()
         {
             var testresult = TriangleSolver.Analyze(-2, -1, 1);
-            Boolean flag = false;
+            Boolean flag = true;
             if (testresult == "\nInvalid input")
             {
-                flag = true;
+                flag = false;
 
                 Assert.IsTrue(flag);
             }
@@ -134,12 +134,20 @@ namespace NUnitTestProjectTriangle
 
         }
         [Test]
-        public void Test8_Zero()
+        public void Test8_zeroinput()
         {
-            string functioncalling = TriangleSolver.Analyze(0,0,0);
-            Assert.AreEqual("\nInvalid input", functioncalling);
-            
+            var testresult = TriangleSolver.Analyze(0, 0, 0);
+            Boolean flag = true;
+            if (testresult == "\nInvalid input")
+            {
+                flag = false;
 
+                Assert.IsTrue(flag);
+            }
+            else
+            {
+                Assert.IsTrue(flag);
+            }
         }
     }
 }
