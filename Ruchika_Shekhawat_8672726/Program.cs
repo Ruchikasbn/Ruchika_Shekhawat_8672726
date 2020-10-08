@@ -74,9 +74,13 @@ namespace Ruchika_Shekhawat_8672726
                 {
                     return "This is an isosceles triangle.\n";
                 }
-                else
+                else if (sidea != sideb || sidea != sidec || sideb != sidec)
                 {
                     return "This is a scalene triangle.\n";
+                }
+                else
+                {
+                    return "Invalid input";
                 }
             }
 
