@@ -66,7 +66,24 @@ namespace NUnitTestProjectTriangle
 
         }
         [Test]
-        public void Test3_scalene()
+        public void Test4_NotIsosceles()
+        {
+            var testresult = TriangleSolver.Analyze(1, 1, 1);
+            Boolean flag = true;
+            if (testresult == "This is an isosceles triangle.\n")
+            {
+                flag = false;
+
+                Assert.IsTrue(flag);
+            }
+            else
+            {
+                Assert.IsTrue(flag);
+            }
+
+        }
+        [Test]
+        public void Test5_scalene()
         {
             string testresult = TriangleSolver.Analyze(2, 5, 8);
             Boolean flag = false;
@@ -80,6 +97,48 @@ namespace NUnitTestProjectTriangle
             {
                 Assert.IsTrue(flag);
             }
+
+        }
+        [Test]
+        public void Test6_NotScalene()
+        {
+            var testresult = TriangleSolver.Analyze(1, 1, 1);
+            Boolean flag = true;
+            if (testresult == "This is a scalene triangle.\n")
+            {
+                flag = false;
+
+                Assert.IsTrue(flag);
+            }
+            else
+            {
+                Assert.IsTrue(flag);
+            }
+
+        }
+        [Test]
+        public void Test7_negative_input()
+        {
+            var testresult = TriangleSolver.Analyze(-2, -1, 1);
+            Boolean flag = false;
+            if (testresult == "\nInvalid input")
+            {
+                flag = true;
+
+                Assert.IsTrue(flag);
+            }
+            else
+            {
+                Assert.IsTrue(flag);
+            }
+
+        }
+        [Test]
+        public void Test8_Zero()
+        {
+            string functioncalling = TriangleSolver.Analyze(0,0,0);
+            Assert.AreEqual("\nInvalid input", functioncalling);
+            
 
         }
     }
