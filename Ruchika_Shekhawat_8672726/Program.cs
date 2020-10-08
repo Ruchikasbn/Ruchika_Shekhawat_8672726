@@ -12,6 +12,7 @@ namespace Ruchika_Shekhawat_8672726
 
             do
             {
+                // comment added
                 int sidea, sideb, sidec, menu;
 
                 Console.Write("\n Check whether a triangle is Equilateral, Isosceles or Scalene:\n");
