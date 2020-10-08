@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace Ruchika_Shekhawat_8672726
 {
 
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -28,7 +28,17 @@ namespace Ruchika_Shekhawat_8672726
                 if (menu == 1)
 
                 {
-                    TriangleSolver.Analyze(out sidea, out sideb, out sidec);
+                    Console.Write("Input side 1 of triangle: ");
+                    sidea = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Input side 2 of triangle: ");
+                    sideb = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Input side 3 of triangle: ");
+                    sidec = Convert.ToInt32(Console.ReadLine());
+
+                 var result =   TriangleSolver.Analyze( sidea,  sideb,  sidec);
+                    Console.WriteLine(result);
                 }
                 else if (menu == 2)
                 {
@@ -48,32 +58,25 @@ namespace Ruchika_Shekhawat_8672726
 
 
 
-        static class TriangleSolver
+      public  static class TriangleSolver
         {
-            public static void Analyze(out int sidea, out int sideb, out int sidec)
+            public static string Analyze( int sidea,  int sideb,  int sidec)
             {
-                Console.Write("Input side 1 of triangle: ");
-                sidea = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Input side 2 of triangle: ");
-                sideb = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Input side 3 of triangle: ");
-                sidec = Convert.ToInt32(Console.ReadLine());
+              
 
 
 
                 if (sidea == sideb && sideb == sidec)
                 {
-                    Console.Write("This is an equilateral triangle.\n");
+                    return "This is an equilateral triangle.";
                 }
                 else if (sidea == sideb || sidea == sidec || sideb == sidec)
                 {
-                    Console.Write("This is an isosceles triangle.\n");
+                    return "This is an isosceles triangle.\n";
                 }
                 else
                 {
-                    Console.Write("This is a scalene triangle.\n");
+                    return "This is a scalene triangle.\n";
                 }
             }
 
